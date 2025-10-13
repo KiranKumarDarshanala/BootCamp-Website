@@ -111,6 +111,7 @@ const Registration = () => {
                   value={name}
                   placeholder="Enter Name *"
                   required
+                  minLength={3}
                   onChange={handleChange}
                 />
               </div>
@@ -124,6 +125,7 @@ const Registration = () => {
                   value={email}
                   placeholder="Enter Email *"
                   required
+                  minLength={13}
                   onChange={handleChange}
                 />
               </div>
@@ -137,6 +139,7 @@ const Registration = () => {
                   value={password}
                   placeholder="Enter Password *"
                   required
+                  minLength={7}
                   onChange={handleChange}
                 />
               </div>

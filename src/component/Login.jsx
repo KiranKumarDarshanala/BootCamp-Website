@@ -18,6 +18,9 @@ const Login = () => {
   });
   let { email, password } = formData;
 
+  let handleForgetPassword = ()=>{
+    toast.error("This option is not available!\n We are currently working on this feature..");
+  }
 
   let handleChange = (e) => {
     let { name, value, type } = e.target;
@@ -116,6 +119,7 @@ const Login = () => {
                 value={email}
                 placeholder='Enter your email *'
                 required
+                minLength={13}
                 onChange={handleChange}
               />
             </div>
@@ -129,6 +133,7 @@ const Login = () => {
                 value={password}
                 placeholder='Enter your password *'
                 required
+                minLength={7}
                 onChange={handleChange}
               />
             </div>
@@ -141,7 +146,7 @@ const Login = () => {
             </button>
 
             <div>
-              <p className='text-center text-blue-600 hover:underline'>Forgot your password?</p>
+              <p className='text-center text-blue-600 hover:underline' onClick={handleForgetPassword}>Forgot your password?</p>
             </div>
             <div className='text-center pt-5 '>
               <p className='text-gray-500 pb-5'>

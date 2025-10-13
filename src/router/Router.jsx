@@ -44,10 +44,6 @@ let routes = createBrowserRouter([
                             <AddBootCamp />
                         </PrivateRoute>
                     },
-                    // {
-                    //     path: "/layout/bootCampProfile",
-                    //     element: <BootCampProfile />
-                    // },
                     {
                         path: "/layout/displayCources",
                         element: <DisplayCources />
