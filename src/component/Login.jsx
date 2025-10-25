@@ -140,19 +140,19 @@ const Login = () => {
 
             <button
               type="submit"
-              className='w-full p-3 mb-4 rounded-xl text-center text-xl font-medium bg-blue-700 text-white hover:bg-blue-900 transition-all'
+              className='w-full p-3 cursor-pointer mb-4 rounded-xl text-center text-xl font-medium bg-blue-700 text-white hover:bg-blue-900 transition-all'
             >
               Sign In
             </button>
 
             <div>
-              <p className='text-center text-blue-600 hover:underline' onClick={handleForgetPassword}>Forgot your password?</p>
+              <p className='text-center cursor-pointer text-blue-600 hover:underline' onClick={handleForgetPassword}>Forgot your password?</p>
             </div>
             <div className='text-center pt-5 '>
               <p className='text-gray-500 pb-5'>
                 Don't have an account?
               </p>
-              <Link className='pt-5 font-medium hover:text-blue-500' to="/register">
+              <Link className='pt-5 font-medium cursor-pointer hover:text-blue-500' to="/register">
                 Create Account
               </Link>
             </div>

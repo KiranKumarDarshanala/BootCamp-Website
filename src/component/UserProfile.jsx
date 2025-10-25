@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { MyContext } from '../context/GlobalContext';
 import { toast } from 'react-toastify';
-import Loader from '../../../../13.Routing/dynamic_routing/src/components/Loader';
+import Loader from '../component/Loader';
 import { FaUserCircle } from 'react-icons/fa';
 
 const UserProfile = () => {

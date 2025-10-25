@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { MyContext } from '../context/GlobalContext'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Loader from '../../../../13.Routing/dynamic_routing/src/components/Loader';
+import Loader from './Loader';
 import { FaPlus } from 'react-icons/fa';
 import { LuBookOpen } from 'react-icons/lu';
 import { FaArrowTrendUp } from "react-icons/fa6";
@@ -106,7 +106,7 @@ const DisplayBootCamps = () => {
                 <p className='text-gray-500'>{bootCampCount} bootcamps available</p>
             </div>
 
-            <section className="w-full max-w-[full] mx-auto bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-5 inset-shadow-sm">
+            <section className="w-full max-w-[full] mx-auto bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-5 inset-shadow-sm">
                 {bootCamps?.length > 0 ? (
                     bootCamps.map((element) => {
                         let { name, email, description, website, address, course, photo, id } = element;

@@ -173,7 +173,7 @@ const Registration = () => {
 
               <button
                 type="submit"
-                className='w-full p-3 mb-4 rounded-xl text-center text-xl font-medium bg-blue-700 text-white hover:bg-blue-900 transition-all'
+                className='w-full p-3 cursor-pointer mb-4 rounded-xl text-center text-xl font-medium bg-blue-700 text-white hover:bg-blue-900 transition-all'
               >
                 Create Account
               </button>

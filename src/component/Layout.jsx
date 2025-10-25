@@ -18,7 +18,7 @@ const Layout = () => {
                         <NavBar/>
                         <section className="flex w-full">
                             <ToastContainer />
-                            <SideBar className="min-h-screen" />
+                            {/* <SideBar className="min-h-screen" /> */}
                             <main className="flex-1 p-6">
                                 <Outlet />
                             </main>

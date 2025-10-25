@@ -161,14 +161,6 @@ const DisplayCources = () => {
                     <div className="flex-1 pl-10">
                       <h2 className="text-xl font-bold mb-2">{title}</h2>
                       <p className="text-sm text-gray-600 mb-4 line-clamp-3">{description}</p>
-                      {/* <h3 className="text-md font-medium mb-1">{duration}</h3> */}
-                      {/* <p className="text-sm text-gray-700 mb-2">
-                        {scholarshipAvailable ? "Scholarship Available" : "No Scholarship"}
-                      </p> */}
-                      {/* <div className="flex justify-center gap-4 text-sm font-medium mb-4">
-                        <span className="text-emerald-700">${price}</span>
-                        <span className="text-gray-700 capitalize">{minimumSkill}</span>
-                      </div> */}
                     </div>
                     <div className='flex gap-5 pl-10'>
                       <p className='flex items-center gap-2 text-gray-600'><IoPlayOutline /> Interactive lessons</p>
