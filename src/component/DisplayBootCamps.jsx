@@ -54,148 +54,154 @@ const DisplayBootCamps = () => {
 
     return (
         <>
-            {/* Responsive */}
-            <div className='border border-blue-400 bg-blue-100 rounded-2xl h-[100px] flex items-center justify-between p-5'>
-
+            {/* Header Section */}
+            <div className="border border-blue-400 bg-blue-100 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
-                    <h1 className='text-xl font-bold'>Welcome back, {userName} 👋</h1>
-                    <p></p>
+                    <h1 className="text-lg sm:text-xl md:text-2xl font-bold">
+                        Welcome back, {userName} 👋
+                    </h1>
                 </div>
-                {
-                    user != "publisher" ? <>
 
-                    </> : <div>
-                        <NavLink className={`flex p-[10px] rounded gap-4  items-center bg-blue-500 `}
+                {user === "publisher" && (
+                    <div>
+                        <NavLink
+                            className="flex items-center justify-center gap-2 bg-blue-500 px-4 py-2 rounded-lg text-white hover:bg-blue-700 transition-all"
                             to="/layout/addBootCamp"
                         >
-                            <FaPlus className='text-[#000] text-xl' />
-                            Create BootCamp
+                            <FaPlus className="text-lg" />
+                            <span className="text-sm sm:text-base">Create BootCamp</span>
                         </NavLink>
                     </div>
-                }
-
-            </div>
-            <section className='h-[150px] p-5 flex justify-evenly'>
-                <div className='border border-gray-200 rounded-2xl shadow h-full w-[300px] pl-5 flex items-center gap-4'>
-                    <LuBookOpen className='text-[#2364d6] p-2 rounded-xl text-xl bg-blue-200 w-[40px] h-[40px]' />
-                    <div>
-                        <p className='text-gray-700'>Total Bootcamps</p>
-                        <h1 className='text-2xl font-bold'>{bootCampCount}</h1>
-                    </div>
-                </div>
-
-                <div className='border border-gray-200 rounded-2xl shadow h-full w-[300px] pl-5 flex items-center gap-4'>
-                    <FaArrowTrendUp className='text-[#26d623] p-2 rounded-xl text-xl bg-green-200 w-[40px] h-[40px]' />
-                    <div>
-                        <p className='text-gray-700'>Total Courses</p>
-                        <h1 className='text-2xl font-bold'>{courseCount}</h1>
-                    </div>
-                </div>
-
-                <div className='border border-gray-200 rounded-2xl shadow h-full w-[300px] pl-5 flex items-center gap-4'>
-                    <TbUsers className='text-[#b223d6] p-2 rounded-xl text-xl bg-violet-200 w-[40px] h-[40px]' />
-                    <div>
-                        <p className='text-gray-700'>Active Students</p>
-                        <h1 className='text-2xl font-bold'>1,743</h1>
-                    </div>
-                </div>
-            </section>
-
-            <div className='flex justify-between p-3'>
-                <h1 className='text-xl font-bold' >All Bootcamps</h1>
-                <p className='text-gray-500'>{bootCampCount} bootcamps available</p>
+                )}
             </div>
 
-            <section className="w-full max-w-[full] mx-auto bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-5 inset-shadow-sm">
+           {/* Dashboard Stats Section */}
+<section className="w-[90vw]  bg-[#f9f9f9] p-4 sm:p-5 overflow-x-auto scrollbar-hide ">
+  <div
+    className="
+      flex 
+      sm:flex-row 
+      flex-nowrap 
+      justify-start 
+      sm:justify-evenly 
+      items-center 
+      gap-4 sm:gap-6 md:gap-10
+      overflow-x-auto sm:overflow-x-visible 
+      snap-x snap-mandatory 
+      scrollbar-hide 
+      scroll-smooth
+      px-2 sm:px-0
+    "
+  >
+    {/* Card 1 */}
+    <div className="snap-center shrink-0 border border-gray-200 rounded-2xl shadow h-[110px] sm:h-[130px] w-[85vw] sm:w-[280px] md:w-[300px] flex items-center pl-5 gap-4 bg-white">
+      <LuBookOpen className="text-[#2364d6] p-2 bg-blue-200 rounded-xl w-[40px] h-[40px]" />
+      <div>
+        <p className="text-gray-700 text-sm sm:text-base">Total Bootcamps</p>
+        <h1 className="text-xl sm:text-2xl font-bold">{bootCampCount}</h1>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="snap-center shrink-0 border border-gray-200 rounded-2xl shadow h-[110px] sm:h-[130px] w-[85vw] sm:w-[280px] md:w-[300px] flex items-center pl-5 gap-4 bg-white">
+      <FaArrowTrendUp className="text-[#26d623] p-2 bg-green-200 rounded-xl w-[40px] h-[40px]" />
+      <div>
+        <p className="text-gray-700 text-sm sm:text-base">Total Courses</p>
+        <h1 className="text-xl sm:text-2xl font-bold">{courseCount}</h1>
+      </div>
+    </div>
+
+    {/* Card 3 */}
+    <div className="snap-center shrink-0 border border-gray-200 rounded-2xl shadow h-[110px] sm:h-[130px] w-[85vw] sm:w-[280px] md:w-[300px] flex items-center pl-5 gap-4 bg-white">
+      <TbUsers className="text-[#b223d6] p-2 bg-violet-200 rounded-xl w-[40px] h-[40px]" />
+      <div>
+        <p className="text-gray-700 text-sm sm:text-base">Active Students</p>
+        <h1 className="text-xl sm:text-2xl font-bold">1,743</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+            {/* Bootcamps Header */}
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-4 sm:px-6 py-3">
+                <h1 className="text-lg sm:text-xl font-bold">All Bootcamps</h1>
+                <p className="text-gray-500 text-sm sm:text-base">
+                    {bootCampCount} bootcamps available
+                </p>
+            </div>
+
+            {/* Bootcamp Cards Section */}
+            <section className="w-full max-w-full mx-auto bg-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 p-4 sm:p-6">
                 {bootCamps?.length > 0 ? (
                     bootCamps.map((element) => {
-                        let { name, email, description, website, address, course, photo, id } = element;
+                        const { name, email, website, photo, id } = element;
                         return (
                             <div
                                 key={id}
-                                className="overflow-hidden w-[350px] border border-gray-300 pb-10 rounded-3xl hover:shadow-2xl flex flex-col transition-all"
+                                className="overflow-hidden border border-gray-300 rounded-3xl hover:shadow-2xl flex flex-col transition-all bg-white"
                             >
-                                <div className=" relative">
+                                {/* Bootcamp Image */}
+                                <div className="relative">
                                     <img
-                                        className=" w-full h-[280px] object-fill"
+                                        className="w-full h-[220px] sm:h-[260px] md:h-[280px] object-cover"
                                         src={
                                             photo ||
                                             "https://imgs.search.brave.com/C74hlXS1r5BlFBWYXj8_Wq_W2x6uifAqTKrbUKrRmsc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRpYS5pc3RvY2twaG90by5jb20vaWQvMTE0ODE4NTk5OC92ZWN0b3IvZGlnaXRhbC1qYXZhLWNvZGUtdGV4dC1jb21wdXRlci1zb2Z0d2FyZS1jb2RpbmctdmVjdG9yLWNvbmNlcHQtcHJvZ3JhbW1pbmctY29kaW5nLXNjcmlwdC5qcGc_cz02MTJ4NjEyJnc9MCZrPTIwJmM9YTgyOEZ1aUZtU1JPQ0NtYzdnbEpLcjFEU3hrakhFdnBkcTU4RF9tM1RWdz0"
                                         }
                                         alt={name}
-                                        width={500}
-                                        height={400}
                                         loading="lazy"
                                     />
-                                    <div className='text-xs absolute top-4 right-4 p-1 pl-2 pr-2 rounded-xl bg-[#ffffff80]'>
+                                    <div className="absolute top-3 right-3 text-xs sm:text-sm px-2 py-1 rounded-lg bg-white/80">
                                         <p>{element.courses.length} Courses</p>
                                     </div>
-                                    <div className='pl-6 pt-7'>
-                                        <h1 className="text-xl font-medium">{name}</h1>
-                                        <h3 className=" font-light text-gray-700">{email}</h3>
-                                        {/* <p className="p-1">{description}</p> */}
-                                        <p className='font-light text-gray-500'>{website}</p>
-                                        {/* <p>{address}</p> */}
-                                    </div>
                                 </div>
-                                <div className='pl-6 pt-7 flex justify-evenly'>
-                                    <div className=''>
-                                        <LuBookOpen className='text-xl text-gray-600' />
-                                        <div className='flex items-center gap-1'>
-                                            <h1 className='text-xl text-gray-600'>{element.courses.length}</h1>
-                                            <h1 className='text-xl text-gray-600'>Courses</h1>
-                                        </div>
-                                    </div>
-                                    <div className=''>
-                                        <MdAccessTime className='text-xl text-gray-600' />
-                                        <div className='flex items-center gap-1'>
-                                            {/* <h1 className='text-xl text-gray-600'>{element.courses.length}< /h1> */}
-                                            <h1 className='text-xl text-gray-600'>Self-Paced</h1>
-                                        </div>
-                                    </div>
 
+                                {/* Bootcamp Details */}
+                                <div className="p-4 sm:p-5">
+                                    <h1 className="text-lg sm:text-xl font-semibold">{name}</h1>
+                                    <h3 className="text-gray-700 text-sm sm:text-base font-light">{email}</h3>
+                                    <p className="text-gray-500 text-sm sm:text-base">{website}</p>
                                 </div>
-                                <div className="mt-auto text-center w-full ">
+
+                                {/* Bootcamp Info */}
+                                <div className="flex justify-around items-center mt-auto pb-4 sm:pb-6">
+                                    <div className="text-center">
+                                        <LuBookOpen className="text-lg sm:text-xl text-gray-600 mx-auto" />
+                                        <p className="text-gray-600 text-sm">
+                                            {element.courses.length} Courses
+                                        </p>
+                                    </div>
+                                    <div className="text-center">
+                                        <MdAccessTime className="text-lg sm:text-xl text-gray-600 mx-auto" />
+                                        <p className="text-gray-600 text-sm">Self-Paced</p>
+                                    </div>
+                                </div>
+
+                                {/* Action Button */}
+                                <div className="text-center mb-4">
                                     <Link
-                                        className="text-2xl text-white w-[320px] py-2 px-6 border bg-blue-500 rounded-xl m-2 hover:bg-blue-600  transition-all inline-block"
+                                        className="text-base sm:text-lg md:text-xl text-white py-2 px-6 rounded-xl bg-blue-500 hover:bg-blue-600 transition-all inline-block w-[80%]"
                                         to="/layout/displayCources"
                                         state={element}
                                     >
                                         View More
                                     </Link>
-
-                                    {/* <div className="mt-5 flex flex-wrap justify-center gap-4">
-                                        {user === "publisher" && (
-                                            <>
-                                        <Link
-                                                    className="text-2xl text-white py-2 px-6 border bg-emerald-900 rounded-[20px] m-2 hover:bg-white hover:text-black transition-all"
-                                                    to="/layout/editBootCamp"
-                                                    state={element}
-                                                >
-                                                    Edit
-                                                </Link>
-                                                <button
-                                                    className="text-2xl text-white py-2 px-6 border bg-emerald-900 rounded-[20px] m-2 hover:bg-white hover:text-black transition-all"
-                                                    onClick={() => handleDelete(element.id)}
-                                                >
-                                                    Delete
-                                                </button>
-                                        </>
-                                        )}
-                                    </div> */}
                                 </div>
                             </div>
                         );
                     })
                 ) : (
-                    <section className="h-[83vh] w-full flex items-center justify-center">
+                    <section className="h-[60vh] w-full flex items-center justify-center text-gray-600 text-lg">
                         <h1>No Bootcamps Found.</h1>
                     </section>
                 )}
             </section>
-
         </>
-    )
+    );
+
 }
 
 export default React.memo(DisplayBootCamps);
